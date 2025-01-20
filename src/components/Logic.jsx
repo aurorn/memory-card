@@ -60,6 +60,8 @@ function renderCards() {
         cardElement.classList.add('card');
         cardElement.dataset.id = card.id;
 
+        //future card styling here
+
         cardElement.addEventListener('click', () => handleCardClick(card));
         cardContainer.appendChild(cardElement);
     });
