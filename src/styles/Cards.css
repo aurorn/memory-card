@@ -1,0 +1,16 @@
+.cards-grid {
+    flex: 1 1 auto;
+    display: flex;
+    justify-content: row;
+    gap: 20px;
+    padding: 10px;
+}
+
+.card {
+    display: flex;
+    border: 1px solid #000;
+    flex-direction: column;
+    text-align: center;
+    padding: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+}
