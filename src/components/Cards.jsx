@@ -1,25 +1,30 @@
-import { useGameLogic } from './Logic';
 import '../styles/Cards.css';
+import PropTypes from 'prop-types';
 
-export default function Cards() {
-    const { score, currentCards, handleCardClick } = useGameLogic();
-  
-
+export default function Cards({ cards, onCardClick }) {
   return (
-    <div className="cards-container">
-      <div className="score">Score: {score}</div>
-      <div className="cards-grid">
-        {currentCards.map((pokemon) => (
-          <div
-            key={pokemon.id}
-            className="card"
-            onClick={() => handleCardClick(pokemon.id)}
-          >
-            <img src={pokemon.image} alt={pokemon.name} />
-            <p>{pokemon.name}</p>
-          </div>
-        ))}
-      </div>
+    <div className="cards-grid">
+      {cards.map((pokemon) => (
+        <div
+          key={pokemon.id}
+          className="card"
+          onClick={() => onCardClick(pokemon.id)}
+        >
+          <img src={pokemon.image} alt={pokemon.name} />
+          <p>{pokemon.name}</p>
+        </div>
+      ))}
     </div>
   );
 }
+
+Cards.propTypes = {
+  cards: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.number.isRequired,
+      name: PropTypes.string.isRequired,
+      image: PropTypes.string.isRequired
+    })
+  ).isRequired,
+  onCardClick: PropTypes.func.isRequired
+};
