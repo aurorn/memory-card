@@ -1,0 +1,49 @@
+/* Icons.css */
+.icon-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.help-icon {
+  font-size: large;
+  font-weight: bold;
+  color: black;
+  cursor: pointer;
+  background-color: orange;
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  align-items: center;
+}
+
+.help-icon:hover {
+  background-color: #ff8c009a;
+}
+
+.rules-tooltip {
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #242424;
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+  width: max-content;
+  margin-bottom: 10px;
+  z-index: 100;
+}
+
+.rules-tooltip::after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border-width: 5px;
+  border-style: solid;
+  border-color: #242424 transparent;
+}
