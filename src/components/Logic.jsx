@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { fetchPokemonData } from './API';
 
 export function useGameLogic() {
@@ -6,10 +6,9 @@ export function useGameLogic() {
   const [currentCards, setCurrentCards] = useState([]);
   const [clickedCards, setClickedCards] = useState(new Set());
   const [score, setScore] = useState(0);
-
-  useEffect(() => {
-    startGame();
-  }, []);
+  const [showAlert, setShowAlert] = useState(false);
+  const [alertMessage, setAlertMessage] = useState('');
+  const [isGameStarted, setIsGameStarted] = useState(false);
 
   const startGame = async () => {
     setScore(0);
@@ -17,6 +16,7 @@ export function useGameLogic() {
     const pokemon = await fetchPokemonData(151);
     setAllCards(pokemon);
     startNewRound(pokemon, new Set());
+    setIsGameStarted(true);
   };
 
   const startNewRound = (cards, clicked) => {
@@ -37,30 +37,11 @@ export function useGameLogic() {
   };
 
   const endGame = (isWin = false) => {
-    const alertOverlay = document.createElement('div');
-    alertOverlay.className = 'alert-overlay active';
-    
-    const alertBox = document.createElement('div');
-    alertBox.className = 'alert-box';
-    
-    const message = document.createElement('div');
-    message.className = 'alert-title';
-    message.textContent = isWin 
+    const message = isWin 
       ? `Congratulations! You found all cards! Final score: ${score}`
       : `Game Over! You clicked a card twice. Final score: ${score}`;
-    
-    const restartBtn = document.createElement('button');
-    restartBtn.className = 'restart-btn';
-    restartBtn.textContent = 'Play Again';
-    restartBtn.onclick = () => {
-      document.body.removeChild(alertOverlay);
-      startGame();
-    };
-    
-    alertBox.appendChild(message);
-    alertBox.appendChild(restartBtn);
-    alertOverlay.appendChild(alertBox);
-    document.body.appendChild(alertOverlay);
+    setAlertMessage(message);
+    setShowAlert(true);
   };
 
   const getRandomCards = (cards, count) => {
@@ -93,6 +74,11 @@ export function useGameLogic() {
   return {
     score,
     currentCards,
-    handleCardClick
+    handleCardClick,
+    startGame,
+    showAlert,
+    alertMessage,
+    isGameStarted,
+    setShowAlert
   };
 }
