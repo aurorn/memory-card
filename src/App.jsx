@@ -1,11 +1,9 @@
-
 import { useGameLogic } from './components/Logic';
 import Intro from './components/Intro';
-import Cards from './components/Cards';
+import Mainscreen from './components/Mainscreen';
 import Alerts from './components/Alerts';
-import Icons from './components/Icons';
-import './App.css'
-import './styles/Alerts.css'
+import './App.css';
+import './styles/Alerts.css';
 
 function App() {
   const { 
@@ -21,14 +19,13 @@ function App() {
 
   return (
     <div className="app">
-
       <Intro onStart={startGame} isGameStarted={isGameStarted} />
-      <Icons />
       {isGameStarted && (
-        <>
-          <div className="score">Score: {score}</div>
-          <Cards cards={currentCards} onCardClick={handleCardClick} />
-        </>
+        <Mainscreen 
+          score={score}
+          cards={currentCards}
+          onCardClick={handleCardClick}
+        />
       )}
       <Alerts 
         show={showAlert}
