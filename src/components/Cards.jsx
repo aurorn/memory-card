@@ -31,17 +31,19 @@ export default function Cards({ cards, onCardClick }) {
     <div className="cards-grid">
       {cards.map((pokemon) => (
         <div
-          key={pokemon.id}
-          className="card"
-          style={{ background: pokemon.typeColor }}
-          onClick={() => onCardClick(pokemon.id)}
-          onMouseMove={(e) => handleMouseMove(e, e.currentTarget)}
-          onMouseLeave={(e) => handleMouseLeave(e.currentTarget)}
-        >
-          <div className="card-glare"></div>
-          <img src={pokemon.image} alt={pokemon.name} />
+        key={pokemon.id}
+        className="card"
+        style={{ background: pokemon.typeColor }}
+        onClick={() => onCardClick(pokemon.id)}
+        onMouseMove={(e) => handleMouseMove(e, e.currentTarget)}
+        onMouseLeave={(e) => handleMouseLeave(e.currentTarget)}
+      >
+        <div className="card-glare"></div>
+        <div className="name-plate">
           <p>{pokemon.name}</p>
         </div>
+        <img src={pokemon.image} alt={pokemon.name} />
+      </div>
       ))}
     </div>
   );
