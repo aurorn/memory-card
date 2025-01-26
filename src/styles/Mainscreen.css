@@ -11,17 +11,16 @@
     font-weight: bold;
 }
 
-.cards-grid {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-    padding: 1rem;
-}
 
 .footer {
-    position: absolute;
-    bottom: 0;
     padding: 1rem;
     text-align: center;
+}
+
+@media screen and (max-width: 600px) {
+    .header {
+        flex-direction: column;
+    }
+    
     
 }
