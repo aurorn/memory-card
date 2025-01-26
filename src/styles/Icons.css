@@ -47,3 +47,15 @@
   border-style: solid;
   border-color: #242424 transparent;
 }
+
+@media screen and (max-width: 600px) {
+  .help-icon {
+    width: 30px;
+    height: 30px;
+  }
+  .rules-tooltip {
+    width: 300px;
+    height: auto;
+  }
+  
+}
