@@ -2,13 +2,15 @@
 .cards-grid {
     flex: 1 1 auto;
     display: flex;
-    justify-content: row;
+    flex-wrap: wrap;
+    justify-content: center;
     gap: 20px;
     padding: 10px;
     perspective: 1000px;
 }
 
 .card {
+    flex: 0 0 auto;
     display: flex;
     flex-direction: column;
     text-align: center;
@@ -72,4 +74,15 @@
 
 .card:hover p {
     transform: translateZ(40px);
+}
+
+@media screen and (max-width: 600px) {
+    .cards-grid {
+        padding: 5px;
+    }
+
+    .card {
+        padding: 30px;
+    }
+    
 }
