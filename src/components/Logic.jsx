@@ -33,7 +33,19 @@ export function useGameLogic() {
       3
     );
     
-    setCurrentCards([newCard, ...otherCards]);
+    const roundCards = [...otherCards, newCard];
+    const shuffledCards = shuffleArray(roundCards);
+    
+    setCurrentCards(shuffledCards);
+  };
+
+  const shuffleArray = (array) => {
+    const shuffled = [...array];
+    for (let i = shuffled.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+    }
+    return shuffled;
   };
 
   const endGame = (isWin = false) => {
