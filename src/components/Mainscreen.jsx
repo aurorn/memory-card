@@ -15,12 +15,14 @@ export default function Mainscreen({ score, cards, onCardClick }) {
         <Icons />
       </header>
       
-      <main className="cards-grid">
-        <Cards cards={cards} onCardClick={onCardClick} />
+      <main className="cards-grid-container">
+        <div className="cards-grid">
+          <Cards cards={cards} onCardClick={onCardClick} />
+        </div>
       </main>
       
       <footer className="footer">
-        <p>Memory Card Game</p>
+        <p>Memory Card Game made by <a href="github.com/Aurorn">Sam Cason</a></p>
       </footer>
     </>
   );

@@ -57,13 +57,13 @@
     z-index: 1;
     transform-style: preserve-3d;
     transition: transform 0.2s ease;
+    
 }
 
 .name-plate {
     position: relative;
     background: linear-gradient(145deg, #616160, #444444);
     margin: -20px -20px 20px -20px;
-    padding: 10px;
     border: 2px solid rgba(255, 255, 255, 0.1);
     border-radius: 8px;
     box-shadow: 
@@ -74,13 +74,14 @@
 
 .name-plate p {
     margin: 0;
-    font-size: 1.2em;
-    font-weight: bold;
+    padding: 5px;
     color: white;
     text-shadow: 
         0 2px 4px rgba(0, 0, 0, 0.5),
         0 0 2px rgba(0, 0, 0, 0.5);
     text-transform: capitalize;
+    font-size: 0.6rem;
+    font-weight: 100;
 }
 
 .card:hover img {

@@ -25,7 +25,7 @@
 
 .rules-tooltip {
   position: absolute;
-  bottom: 100%;
+  top: 110%;
   left: 50%;
   transform: translateX(-50%);
   background-color: #5c5c5c;
@@ -35,17 +35,6 @@
   width: max-content;
   margin-bottom: 10px;
   z-index: 100;
-}
-
-.rules-tooltip::after {
-  content: '';
-  position: absolute;
-  top: 100%;
-  left: 50%;
-  transform: translateX(-50%);
-  border-width: 5px;
-  border-style: solid;
-  border-color: #242424 transparent;
 }
 
 @media screen and (max-width: 600px) {
