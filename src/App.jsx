@@ -4,6 +4,7 @@ import Mainscreen from './components/Mainscreen';
 import Alerts from './components/Alerts';
 import './App.css';
 import './styles/Alerts.css';
+import image from './assets/background.png';
 
 function App() {
   const { 
@@ -18,7 +19,7 @@ function App() {
   } = useGameLogic();
 
   return (
-    <div className="app">
+    <div className="app" style={{ backgroundImage: `url(${image})` }}>
       <Intro onStart={startGame} isGameStarted={isGameStarted} />
       {isGameStarted && (
         <Mainscreen 
