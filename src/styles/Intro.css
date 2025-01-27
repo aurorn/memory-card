@@ -4,12 +4,30 @@
     justify-content: center;
     align-items: center;
     height: 100vh;
-    
+    gap: 2rem;
+}
+
+.nes-text.is-primary {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.nes-text.is-success {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+}
+
+.nes-btn {
+    margin-top: 1rem;
 }
 
 @media screen and (max-width: 600px) {
     .intro-screen {
         padding: 2%;
         text-align: center;
+    }
+    
+    .nes-text.is-primary {
+        font-size: 1.5rem;
     }
 }
