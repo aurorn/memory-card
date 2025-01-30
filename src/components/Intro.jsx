@@ -9,7 +9,7 @@ export default function Intro({ onStart, isGameStarted }) {
   
   return (
     <div className="intro-screen">
-      <div className="nes-container with-title is-centered intro-container">
+      <div className="nes-container with-title is-centered intro-container background">
         <h1 className="title">Pokemon Memory Game</h1>
         <p className="nes-text ">Don&apos;t click the same pokemon twice!</p>
       </div>

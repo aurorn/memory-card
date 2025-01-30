@@ -1,10 +1,14 @@
-.intro-screen {
+.intro-screen  {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     height: 100vh;
     gap: 2rem;
+}
+
+.nes-container {
+    background-color: white;
 }
 
 .nes-text.is-primary {
