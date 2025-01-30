@@ -16,6 +16,10 @@
     color: white;
 }
 
+.score-text {
+    margin: 0;
+}
+
 
 .footer {
     padding: 1rem;
